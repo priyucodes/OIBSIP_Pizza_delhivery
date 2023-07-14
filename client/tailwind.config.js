@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -6,6 +7,16 @@ export default {
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
+        satisfy: ["Satisfy", "cursive"],
+      },
+      colors: {
+        primary: "#EF4523",
+      },
+      backgroundImage: {
+        "hero-bg": "url('/src/assets/heroBg.jpg')",
+      },
+      backgroundSize: {
+        "100%": "100% 100%",
       },
     },
   },
