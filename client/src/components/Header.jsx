@@ -21,7 +21,7 @@ const Header = () => {
         <li className="text-white font-bold">
           <a href="#">Login</a>
         </li>
-        <li className="relative flex">
+        <li className="relative flex ">
           <ShoppingCartIcon className="w-8 h-8 object-contain text-white" />
           <p className="absolute -right-2 -top-2 bg-red-500 rounded-full w-5 h-5 text-white  text-center flex items-center justify-center">
             0

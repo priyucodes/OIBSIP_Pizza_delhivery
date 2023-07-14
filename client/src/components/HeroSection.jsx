@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <section className="h-[94vh] clip-path ">
+    <section className="h-[93vh] ">
       {/* // -top-[64px] pt-24 */}
       <div className="bg-hero-bg  bg-cover bg-no-repeat absolute w-screen h-screen top-0 -z-10"></div>
       <div className="bg-black/30 bg-cover bg-no-repeat absolute w-screen h-screen top-0 -z-10"></div>
