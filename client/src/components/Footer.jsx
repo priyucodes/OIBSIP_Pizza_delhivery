@@ -13,17 +13,17 @@ const Footer = () => {
         <ArrowSmallUpIcon
           width={40}
           height={40}
-          className="bg-red-500 rounded-full p-2 text-white  right-4"
+          className="bg-primary rounded-full p-2 text-white  right-4"
         />
       </button>
-      <div className="flex max-w-screen-xl mx-auto justify-between items-start py-24 flex-wrap">
-        <div className="flex flex-col gap-4 ">
+      <div className="flex max-w-screen-2xl mx-auto justify-between items-start py-12 lg:py-24 flex-col gap-4 lg:gap-0  lg:flex-row">
+        <div className="flex flex-col gap-4 border-b border-b-slate-400 pb-3 w-full lg:border-0 lg:pb-0 lg:w-fit">
           <p className="text-primary">Location</p>
           <p className="text-white/70">
             ABC Southwest Park, New Delhi, India 110011
           </p>
         </div>
-        <div className="flex flex-col gap-4 ">
+        <div className="flex flex-col gap-4 border-b border-b-slate-400 pb-3 w-full lg:border-0 lg:pb-0 lg:w-fit">
           <p className="text-primary">Hours</p>
           <p className="text-white/70">
             SUNDAY – THURSDAY
@@ -33,8 +33,8 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex flex-col gap-4 ">
-          <p className="text-primary relative left-4">FIND US</p>
-          <p className="text-zinc-700">
+          <p className="text-primary relative lg:left-4">FIND US</p>
+          <p className="text-zinc-700 relative -left-4 lg:left-0">
             <SocialIcon
               url="https://www.facebook.com/"
               bgColor="transparent"
