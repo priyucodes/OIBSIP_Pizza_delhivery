@@ -4,7 +4,7 @@ import { useRef } from "react";
 const Header = () => {
   const navRef = useRef(null);
   return (
-    <header className="px-6 pt-1 flex justify-between shadow-lg items-center font-roboto  h-16 w-full relative z-10">
+    <header className="px-6 pt-1 flex justify-between shadow-lg items-center font-roboto  h-16 w-full relative z-10 max-w-screen-2xl mx-auto">
       <div className="flex gap-2 items-center">
         <img
           src="/logo.png"
