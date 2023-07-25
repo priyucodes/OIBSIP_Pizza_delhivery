@@ -1,7 +1,7 @@
 const ContactSection = () => {
   return (
     <section
-      id="#contact"
+      id="contact"
       className="max-w-screen-2xl mx-auto bg-white px-6 my-12"
     >
       <div className="flex lg:flex-row flex-col justify-between items-start gap-8">

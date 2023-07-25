@@ -1,7 +1,7 @@
 const PizzaSection = () => {
   return (
     <section
-      id="#pizzas"
+      id="pizzas"
       className="max-w-screen-2xl mx-auto bg-white my-4 px-6"
     >
       <div className="flex lg:flex-row gap-6 mb-6 lg:mb-0 lg:gap-0 flex-col justify-between items-center">

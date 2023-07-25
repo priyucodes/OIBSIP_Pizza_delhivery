@@ -1,8 +1,8 @@
 const AboutSection = () => {
   return (
     <section
-      id="#about"
-      className="bg-about-bg bg-cover bg-no-repeat h-[51vh]  flex justify-center items-center relative overflow-hidden bg-bottom"
+      id="about"
+      className="bg-about-bg bg-cover bg-no-repeat h-[51vh]  flex justify-center items-center relative overflow-hidden bg-bottom  bg-fixed"
     >
       <div className="absolute w-full h-full bg-black/50 z-0" />
       <div className="max-w-screen-2xl mx-auto flex flex-col justify-between  items-center gap-12 px-6 relative z-50">
