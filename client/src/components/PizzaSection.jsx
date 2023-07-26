@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import Menu from "./Menu";
+
 const PizzaSection = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  console.log();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const handleClick = e => {
+    e.preventDefault();
+    setIsMenuVisible(true);
+    // setIsMenuVisible(prev => !prev);
+  };
   return (
     <section
       id="pizzas"
@@ -33,21 +40,19 @@ const PizzaSection = () => {
           </p>
           <button
             onClick={() =>
-              isLoggedIn ? (
-                <Menu />
-              ) : (
-                toast.success("Look at my styles.", {
-                  style: {
-                    border: "1px solid #713200",
-                    padding: "16px",
-                    color: "#713200",
-                  },
-                  iconTheme: {
-                    primary: "#713200",
-                    secondary: "#FFFAEE",
-                  },
-                })
-              )
+              isLoggedIn
+                ? handleClick
+                : toast.error("Please Login", {
+                    style: {
+                      border: "1px solid #EF4523",
+                      padding: "16px",
+                      color: "#EF4523",
+                    },
+                    iconTheme: {
+                      primary: "#EF4523",
+                      secondary: "#FFFAEE",
+                    },
+                  })
             }
             className="bg-primary py-3 px-6 uppercase text-white font-bold text-lg mb-4"
           >

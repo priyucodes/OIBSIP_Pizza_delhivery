@@ -4,7 +4,7 @@ const ContactSection = () => {
       id="contact"
       className="max-w-screen-2xl mx-auto bg-white px-6 my-12"
     >
-      <div className="flex lg:flex-row flex-col justify-between items-start gap-8">
+      <div className="flex  lg:flex-row flex-col justify-between lg:items-start gap-8">
         <div className="border border-t-0 break-words flex flex-col p-8">
           Have any feedback or queries? Feel free to reach out to us. Write to
           us at{" "}
