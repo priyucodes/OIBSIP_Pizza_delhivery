@@ -1,4 +1,8 @@
+import { useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
+import Menu from "./Menu";
 const PizzaSection = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <section
       id="pizzas"
@@ -27,9 +31,32 @@ const PizzaSection = () => {
           <p className="text-[50px] md:text-[70px]  text-primary font-satisfy font-bold ">
             Limited time offer
           </p>
-          <button className="bg-primary py-3 px-6 uppercase text-white font-bold text-lg mb-4">
+          <button
+            onClick={() =>
+              isLoggedIn ? (
+                <Menu />
+              ) : (
+                toast.success("Look at my styles.", {
+                  style: {
+                    border: "1px solid #713200",
+                    padding: "16px",
+                    color: "#713200",
+                  },
+                  iconTheme: {
+                    primary: "#713200",
+                    secondary: "#FFFAEE",
+                  },
+                })
+              )
+            }
+            className="bg-primary py-3 px-6 uppercase text-white font-bold text-lg mb-4"
+          >
             View Our Menu
           </button>
+          <p className="text-black font-bold text-sm">
+            <span className="text-primary">NOTE:</span> Kindly Login in to order
+            from our Menu
+          </p>
         </div>
         <div className="w-96 h-96">
           <img
@@ -39,6 +66,7 @@ const PizzaSection = () => {
           />
         </div>
       </div>
+      <Toaster position="bottom-center" reverseOrder={false} />
     </section>
   );
 };

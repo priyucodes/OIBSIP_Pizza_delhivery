@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-4 ">
           <p className="text-primary relative lg:left-4">FIND US</p>
-          <p className="text-zinc-700 relative -left-4 lg:left-0">
+          <span className="text-zinc-700 relative -left-4 lg:left-0">
             <SocialIcon
               url="https://www.facebook.com/"
               bgColor="transparent"
@@ -50,7 +50,7 @@ const Footer = () => {
               bgColor="transparent"
               fgColor="#fff"
             />
-          </p>
+          </span>
         </div>
       </div>
       <div className="bg-zinc-800 absolute w-full left-0  text-center py-4">

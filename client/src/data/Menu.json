@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Black Olive Pizza",
+      "price": 249
+    },
+    {
+      "id": 2,
+      "name": "Pepperoni Pizza",
+      "price": 299
+    },
+    {
+      "id": 3,
+      "name": "Cheese Pizza",
+      "price": 199
+    }
+  ]
+}
