@@ -1,8 +1,8 @@
 import { data } from "../data/WhatWeOffer.json";
 const WhatWeOfferSection = () => {
   return (
-    <section id="about" className=" bg-primary px-6 py-8">
-      <div className="max-w-screen-2xl mx-auto flex flex-col justify-center items-center gap-8">
+    <section id="about" className=" bg-primary  py-8 ">
+      <div className="max-w-screen-2xl mx-auto flex flex-col justify-center items-center gap-8 px-6">
         <h4 className="text-[60px] md:text-[80px] font-satisfy text-white font-bold">
           What We Offer
         </h4>

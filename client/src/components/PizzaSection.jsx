@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
-
+import Menu from "./Menu";
 const PizzaSection = () => {
   console.log();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const handleClick = e => {
     e.preventDefault();
+
     setIsMenuVisible(true);
     // setIsMenuVisible(prev => !prev);
   };
@@ -39,9 +40,9 @@ const PizzaSection = () => {
             Limited time offer
           </p>
           <button
-            onClick={() =>
+            onClick={e =>
               isLoggedIn
-                ? handleClick
+                ? handleClick(e)
                 : toast.error("Please Login", {
                     style: {
                       border: "1px solid #EF4523",
@@ -72,6 +73,8 @@ const PizzaSection = () => {
         </div>
       </div>
       <Toaster position="bottom-center" reverseOrder={false} />
+
+      {isLoggedIn && isMenuVisible ? <Menu isLoggedIn={isLoggedIn} /> : <></>}
     </section>
   );
 };
