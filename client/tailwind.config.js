@@ -15,6 +15,7 @@ export default {
       backgroundImage: {
         "hero-bg": "url('/src/assets/heroBg.jpg')",
         "about-bg": "url('/src/assets/aboutBg.jpg')",
+        "login-bg": "url('/src/assets/loginBg.jpg')",
       },
       backgroundSize: {
         "100%": "100% 100%",
