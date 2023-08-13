@@ -1,9 +1,7 @@
-import Layout from "./Layout";
 import { Flex, HStack, Text, VStack } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import CartOrders from "./CartOrders";
 import Checkout from "./Checkout";
-import Header from "./Header";
 
 const Cart = () => {
   const cartstate = useSelector(state => state.cart);
