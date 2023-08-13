@@ -52,7 +52,7 @@ router.post("/addbase", async (req, res) => {
     });
     await newBase.save();
     res.send("New Base Added Successfully");
-    window.location.reload();
+    // window.location.reload();
   } catch (error) {
     return res.status(404).json({ message: error });
   }

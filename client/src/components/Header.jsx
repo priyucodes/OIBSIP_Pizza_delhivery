@@ -59,7 +59,7 @@ const Header = () => {
           </div>{" "}
         </Link>
         <ul className="hidden gap-20 items-center md:flex">
-          {!isLoggedIn && (
+          {(!isLoggedIn || !user.email) && (
             <li className="text-white font-bold">
               <a href="/login">Login</a>
             </li>

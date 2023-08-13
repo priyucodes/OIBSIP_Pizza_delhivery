@@ -16,7 +16,7 @@ export const placeOrder = subtotal => async (dispatch, getState) => {
       handler: async response => {
         try {
           const { data } = await axios.post(
-            "http://locahost:3000/api/payment/verifypayment",
+            "http://127.0.0.1:3000/api/payment/verifypayment",
             //post user to backend
             {
               paymentId: response.razorpay_payment_id,
@@ -54,7 +54,7 @@ export const placeOrder = subtotal => async (dispatch, getState) => {
 
   try {
     const { data } = await axios.post(
-      "http://locahost:3000/api/payment/orders",
+      "http://127.0.0.1:3000/api/payment/orders",
       { subtotal }
     );
 
@@ -83,7 +83,7 @@ export const getUserOrders = () => async (dispatch, getState) => {
 
   try {
     const response = await axios.post(
-      "http://locahost:3000/api/payment/getuserorders",
+      "http://127.0.0.1:3000/api/payment/getuserorders",
       { userId: user._id }
     );
     console.log(response);
@@ -98,7 +98,7 @@ export const getAllOrders = () => async dispatch => {
   dispatch({ type: "GET_ALL_ORDERS_REQUEST" });
   try {
     const response = await axios.get(
-      "http://locahost:3000/api/payment/getallorders"
+      "http://127.0.0.1:3000/api/payment/getallorders"
     );
     console.log(response);
     dispatch({ type: "GET_ALL_ORDERS_SUCCESS", payload: response.data });
@@ -112,13 +112,13 @@ export const deliverOrder = orderid => async dispatch => {
   dispatch({ type: "CHECK_ORDER_STATUS_REQUEST" });
   try {
     const response = await axios.post(
-      "http://locahost:3000/api/payment/deliverorder",
+      "http://127.0.0.1:3000/api/payment/deliverorder",
       { orderid: orderid }
     );
     console.log(response);
     alert("Order Delivered");
     const orders = await axios.get(
-      "http://locahost:3000/api/payment/getallorders"
+      "http://127.0.0.1:3000/api/payment/getallorders"
     );
     window.location.reload();
     console.log(orders);
