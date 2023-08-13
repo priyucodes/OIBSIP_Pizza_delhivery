@@ -8,7 +8,7 @@ client/node_modules
 .env.local
 .eslintcache
 .yarn-integrity
-
+client/.env
 .cache
 .yarn/cache
 .yarn/unplugged

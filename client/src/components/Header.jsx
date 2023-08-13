@@ -84,7 +84,10 @@ const Header = () => {
             </Link>
           )}
           {isLoggedIn && (
-            <li onClick={handleLogout} className="relative flex text-white">
+            <li
+              onClick={handleLogout}
+              className="relative flex text-white cursor-pointer"
+            >
               Logout
             </li>
           )}
@@ -138,7 +141,7 @@ const Header = () => {
                 ) : (
                   <li
                     onClick={handleLogout}
-                    className="cursor-pointer text-white text-center"
+                    className="cursor-pointer text-white text-center "
                   >
                     Logout
                   </li>
