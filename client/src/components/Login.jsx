@@ -134,9 +134,9 @@ const Login = () => {
               onChange={isSignUp ? handleSignUpChange : handleChange}
             />
             {!isSignUp && (
-              <Link to="/reset-password">
+              <Link to="/forgot-password">
                 <p className="text-black/80 text-sm">
-                  <a href="/reset-password">Forgot your password?</a>
+                  <a href="/forgot-password">Forgot your password?</a>
                 </p>
               </Link>
             )}
@@ -199,7 +199,7 @@ const Login = () => {
                   onChange={handleSignUpChange}
                 />
                 <p className="text-black/80 text-sm">
-                  <a href="/reset-password">Forgot your password?</a>
+                  <a href="/forgot-password">Forgot your password?</a>
                 </p>
               </div>
             </>
