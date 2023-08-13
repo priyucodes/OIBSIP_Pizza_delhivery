@@ -1,0 +1,2 @@
+need to change backend reset password email message to client base url.
+chane email verify backend email msg too base url

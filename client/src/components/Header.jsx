@@ -1,9 +1,21 @@
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   const navRef = useRef(null);
+  const cartstate = useSelector(state => state.cart);
+  function handleLogout() {
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("token");
+    window.location.replace("/");
+  }
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const userstate = useSelector(state => state.setUserData);
+  const user = userstate.userData;
+
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const handleScroll = () => {
@@ -22,6 +34,9 @@ const Header = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   });
+  useEffect(() => {
+    if (user.email) setIsLoggedIn(true);
+  }, [user, isLoggedIn, setIsLoggedIn]);
   return (
     <header
       className={`px-6 transition-all duration-500 flex justify-between shadow-sm bg-primary/30 items-center font-roboto  h-20 w-full sticky ${
@@ -29,22 +44,26 @@ const Header = () => {
       } z-10 `}
     >
       <div className="max-w-screen-2xl mx-auto flex justify-between  font-roboto   w-full ">
-        <div className="flex gap-2 items-center">
-          <img
-            src="/logo.png"
-            alt="logo"
-            width={60}
-            height={60}
-            className="object-contain "
-          />
-          <h1 className="font-raleway font-extrabold text-3xl text-primary">
-            Pizza Delhivery
-          </h1>
-        </div>
+        <Link to="/">
+          <div className="flex gap-2 items-center">
+            <img
+              src="/logo.png"
+              alt="logo"
+              width={60}
+              height={60}
+              className="object-contain "
+            />
+            <h1 className="font-raleway font-extrabold text-3xl text-primary">
+              Pizza Delhivery
+            </h1>
+          </div>{" "}
+        </Link>
         <ul className="hidden gap-20 items-center md:flex">
-          <li className="text-white font-bold">
-            <a href="/login">Login</a>
-          </li>
+          {!isLoggedIn && (
+            <li className="text-white font-bold">
+              <a href="/login">Login</a>
+            </li>
+          )}
           <li className="text-white font-bold">
             <a href="#pizzas">Pizza&apos;s</a>
           </li>
@@ -55,11 +74,18 @@ const Header = () => {
             <a href="#contact">Contact</a>
           </li>
           {isLoggedIn && (
-            <li className="relative flex ">
-              <ShoppingCartIcon className="w-8 h-8 object-contain text-white" />
-              <p className="absolute -right-2 -top-2 bg-red-500 rounded-full w-5 h-5 text-white  text-center flex items-center justify-center">
-                0
-              </p>
+            <Link to="/cart">
+              <li className="relative flex ">
+                <ShoppingCartIcon className="w-8 h-8 object-contain text-white" />
+                <p className="absolute -right-2 -top-2 bg-red-500 rounded-full w-5 h-5 text-white  text-center flex items-center justify-center">
+                  {cartstate?.cartItems?.length || 0}
+                </p>
+              </li>
+            </Link>
+          )}
+          {isLoggedIn && (
+            <li onClick={handleLogout} className="relative flex text-white">
+              Logout
             </li>
           )}
         </ul>
@@ -99,27 +125,38 @@ const Header = () => {
                     aria-haspopup="true"
                   />
                 </li>
-                <li className="relative">
-                  <a
-                    className=" h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] bg-primary outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none 
+                {!isLoggedIn ? (
+                  <li className="relative">
+                    <a
+                      className=" h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] bg-primary outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none 
                   !text-white motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10 font-bold  text-center flex justify-center"
-                    data-te-sidenav-link-ref
+                      data-te-sidenav-link-ref
+                    >
+                      Login
+                    </a>
+                  </li>
+                ) : (
+                  <li
+                    onClick={handleLogout}
+                    className="cursor-pointer text-white text-center"
                   >
-                    Login
-                  </a>
-                </li>
+                    Logout
+                  </li>
+                )}
                 <li className="relative mt-6">
                   <a
                     className=" h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] bg-primary outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10 font-bold text-3xl text-center flex justify-center"
                     data-te-sidenav-link-ref
                   >
                     {isLoggedIn && (
-                      <div className="flex relative">
-                        <ShoppingCartIcon className="w-8 h-8 object-contain text-white" />
-                        <p className="absolute -right-2 -top-2 bg-red-500 rounded-full w-5 h-5 text-white  text-center flex items-center justify-center">
-                          0
-                        </p>
-                      </div>
+                      <Link to="/cart">
+                        <div className="flex relative">
+                          <ShoppingCartIcon className="w-8 h-8 object-contain text-white" />
+                          <p className="absolute -right-2 -top-2 bg-red-500 rounded-full w-5 h-5 text-white  text-center flex items-center justify-center">
+                            {cartstate?.cartItems?.length || 0}
+                          </p>
+                        </div>{" "}
+                      </Link>
                     )}
                   </a>
                 </li>

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import Menu from "./Menu";
-const PizzaSection = () => {
+import { Link } from "react-router-dom";
+const PizzaSection = ({ user }) => {
   console.log();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -39,7 +40,7 @@ const PizzaSection = () => {
           <p className="text-[50px] md:text-[70px]  text-primary font-satisfy font-bold ">
             Limited time offer
           </p>
-          <button
+          {/* <button
             onClick={e =>
               isLoggedIn
                 ? handleClick(e)
@@ -58,7 +59,12 @@ const PizzaSection = () => {
             className="bg-primary py-3 px-6 uppercase text-white font-bold text-lg mb-4"
           >
             View Our Menu
-          </button>
+          </button> */}
+          <Link to={user && user?.role === "user" ? "/home" : "/login"}>
+            <button className="bg-primary py-3 px-6 uppercase text-white font-bold text-lg mb-4">
+              View Our Menu
+            </button>
+          </Link>
           <p className="text-black font-bold text-sm">
             <span className="text-primary">NOTE:</span> Kindly Login in to order
             from our Menu

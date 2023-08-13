@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 const Login = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState({ email: "", password: "" });
   const [signUpData, setSignUpData] = useState({
     firstName: "",
@@ -59,29 +61,18 @@ const Login = () => {
   };
   const submitHandler = async e => {
     e.preventDefault();
-    if (data.password !== confirmPassword) {
-      toast("Email or password is incorrect!", {
-        icon: "❌",
-        style: {
-          fontSize: "1.3rem",
-        },
-      });
-    } else if (data.password.trim() === "" || confirmPassword.trim() === "") {
-      toast("Password cannot be empty!", {
-        icon: "❌",
-        style: {
-          fontSize: "1.3rem",
-        },
-      });
-    }
+
     try {
       const url = "http://localhost:3000/api/auth";
       const res = await axios.post(url, data);
+      console.log(res);
       localStorage.setItem("token", res?.data?.data);
       if (res?.data?.user?.role === "admin") {
-        window.location.href = "/admin";
+        // window.location.href = "/admin";
+        navigate("/admin");
       } else {
-        window.location.href = "/";
+        // window.location.href = "/";
+        navigate("/");
       }
     } catch (error) {
       if (
@@ -91,6 +82,14 @@ const Login = () => {
       ) {
         setError(error.response.data.message);
       }
+    }
+    if (data.password.trim() === "") {
+      toast("Password cannot be empty!", {
+        icon: "❌",
+        style: {
+          fontSize: "1.3rem",
+        },
+      });
     }
   };
   return (
