@@ -186,7 +186,11 @@ export default function MyoPizzaDisplay() {
               onChange={value => setSauce(value)}
             >
               {sauces.map(sauce => {
-                return <option value={sauce.name}>{sauce.name}</option>;
+                return (
+                  <option key={Math.random() * 10} value={sauce.name}>
+                    {sauce.name}
+                  </option>
+                );
               })}
             </Select>
             <Text padding="10px" fontSize="2xl">
