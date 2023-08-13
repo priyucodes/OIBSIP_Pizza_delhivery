@@ -89,19 +89,19 @@ const Header = () => {
             </Link>
           )}
           {isLoggedIn && (
+            <Link to="myorders">
+              <li className="relative flex text-white cursor-pointer">
+                My Orders
+              </li>{" "}
+            </Link>
+          )}
+          {isLoggedIn && (
             <li
               onClick={handleLogout}
               className="relative flex text-white cursor-pointer"
             >
               Logout
             </li>
-          )}
-          {isLoggedIn && (
-            <Link to="myorders">
-              <li className="relative flex text-white cursor-pointer">
-                My Orders
-              </li>{" "}
-            </Link>
           )}
         </ul>
         <div className="md:hidden flex flex-col">
