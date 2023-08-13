@@ -17,6 +17,19 @@ import Home from "./components/Home.jsx";
 import Main from "./components/Main.jsx";
 import OrderScreen from "./components/OrderScreen.jsx";
 import MyoPizza from "./components/myoPizza.jsx";
+import Addbases from "./components/Addbases.jsx";
+
+import Toppingslist from "./components/Toppingslist.jsx";
+import Userslist from "./components/Userslist.jsx";
+import Orderslist from "./components/Orderslist.jsx";
+import Pizzaslist from "./components/Pizzaslist.jsx";
+import Baseslist from "./components/Baselist.jsx";
+import Addpizza from "./components/Addpizza.jsx";
+import Editpizza from "./components/Editpizza.jsx";
+import Editbase from "./components/Editbase.jsx";
+import Edittopping from "./components/Edittopping.jsx";
+import Addtopping from "./components/Addtopping.jsx";
+
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -71,20 +84,20 @@ function App() {
           {isAdmin && (
             <>
               <Route path="/admin" element={<Admin />} />
-              {/* <Route path="/admin/addpizzas" element={<Addpizza />} />
-            <Route path="/admin/userslist" element={<Userslist />} />
-            <Route path="/admin/orderslist" element={<Orderslist />} />
-            <Route path="/admin/pizzaslist" element={<Pizzaslist />} />
-            <Route path="/admin/editpizza/:pizzaid" element={<Editpizza />} />
-            <Route path="/admin/baseslist" element={<Baseslist />} />
-            <Route path="/admin/addbases" element={<Addbases />} />
-            <Route path="/admin/editbase/:baseid" element={<Editbase />} />
-            <Route path="/admin/toppingslist" element={<Toppingslist />} />
-          <Route path="/admin/addtopping" element={<Addtopping />} /> */}
-              {/* <Route
-              path="/admin/edittopping/:toppingid"
-              element={<Edittopping />}
-            /> */}
+              <Route path="/admin/addpizzas" element={<Addpizza />} />
+              <Route path="/admin/userslist" element={<Userslist />} />
+              <Route path="/admin/orderslist" element={<Orderslist />} />
+              <Route path="/admin/pizzaslist" element={<Pizzaslist />} />
+              <Route path="/admin/editpizza/:pizzaid" element={<Editpizza />} />
+              <Route path="/admin/baseslist" element={<Baseslist />} />
+              <Route path="/admin/addbases" element={<Addbases />} />
+              <Route path="/admin/editbase/:baseid" element={<Editbase />} />
+              <Route path="/admin/toppingslist" element={<Toppingslist />} />
+              <Route path="/admin/addtopping" element={<Addtopping />} />
+              <Route
+                path="/admin/edittopping/:toppingid"
+                element={<Edittopping />}
+              />
             </>
           )}
           <Route path="*" element={<Main />} />
