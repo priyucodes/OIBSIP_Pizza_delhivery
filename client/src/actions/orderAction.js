@@ -1,5 +1,5 @@
 import axios from "axios";
-
+// import Razorpay from "razorpay";
 export const placeOrder = subtotal => async (dispatch, getState) => {
   dispatch({ type: "PLACE_ORDER_ REQUEST " });
   const cartItems = getState().cart.cartItems;
@@ -8,7 +8,7 @@ export const placeOrder = subtotal => async (dispatch, getState) => {
 
   const initPayment = data => {
     const options = {
-      key: process.env.KEY_ID,
+      key: import.meta.env.KEY_ID,
       amount: data.amount,
       currency: data.currency,
       description: "Test Transaction",
@@ -49,6 +49,7 @@ export const placeOrder = subtotal => async (dispatch, getState) => {
       },
     };
     const rzp1 = new window.Razorpay(options);
+
     rzp1.open();
   };
 
