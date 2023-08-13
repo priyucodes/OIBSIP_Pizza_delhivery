@@ -11,7 +11,6 @@ export default function PizzaDisplay() {
   const pizzastate = useSelector(state => state.getAllPizzas);
 
   const { pizzas, error, loading } = pizzastate;
-
   useEffect(() => {
     dispatch(getAllPizzas());
   }, [dispatch]);
