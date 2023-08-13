@@ -15,7 +15,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const userstate = useSelector(state => state.setUserData);
   const user = userstate.userData;
-
+  const token = localStorage.getItem("token");
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const handleScroll = () => {
@@ -35,7 +35,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   });
   useEffect(() => {
-    if (user.email) setIsLoggedIn(true);
+    if (user) setIsLoggedIn(true);
   }, [user, isLoggedIn, setIsLoggedIn]);
   return (
     <header
@@ -59,7 +59,7 @@ const Header = () => {
           </div>{" "}
         </Link>
         <ul className="hidden gap-20 items-center md:flex">
-          {(!isLoggedIn || !user.email) && (
+          {(!isLoggedIn || !user.email || !token) && (
             <li className="text-white font-bold">
               <a href="/login">Login</a>
             </li>
