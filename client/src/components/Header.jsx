@@ -65,9 +65,9 @@ const Header = () => {
         </Link>
         <ul className="hidden gap-20 items-center md:flex">
           {(!isLoggedIn || !user.email || !token) && (
-            <li className="text-white font-bold">
-              <a href="/login">Login</a>
-            </li>
+            <Link to="/login">
+              <li className="text-white font-bold">Login</li>
+            </Link>
           )}
           <li className="text-white font-bold">
             <a href="#pizzas">Pizza&apos;s</a>
