@@ -72,7 +72,7 @@ const PizzaSection = ({ user }) => {
         </div>
         <div className="w-96 h-96">
           <img
-            src="/src/assets/heroBg.jpg"
+            src="/assets/heroBg.jpg"
             alt="pizza"
             className="rounded-full h-full  object-cover "
           />

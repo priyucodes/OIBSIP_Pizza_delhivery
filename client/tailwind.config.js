@@ -13,9 +13,9 @@ export default {
         primary: "#EF4523",
       },
       backgroundImage: {
-        "hero-bg": "url('/src/assets/heroBg.jpg')",
-        "about-bg": "url('/src/assets/aboutBg.jpg')",
-        "login-bg": "url('/src/assets/loginBg.jpg')",
+        "hero-bg": "url('/assets/heroBg.jpg')",
+        "about-bg": "url('/assets/aboutBg.jpg')",
+        "login-bg": "url('/assets/loginBg.jpg')",
       },
       backgroundSize: {
         "100%": "100% 100%",

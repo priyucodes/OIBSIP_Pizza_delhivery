@@ -5,35 +5,35 @@
       "name": "Black Olive Tomato Pizza",
       "ingrediants": "Black olives, tomato, mozarella cheese",
       "price": 249,
-      "img": "../../src/assets/blackOlivePizza.jpg"
+      "img": "/assets/blackOlivePizza.jpg"
     },
     {
       "id": 2,
       "name": "Pepperoni Pizza",
       "ingrediants": "Pepperoni, mozarella cheese",
       "price": 299,
-      "img": "../../src/assets/pepperoniPizza.jpg"
+      "img": "/assets/pepperoniPizza.jpg"
     },
     {
       "id": 3,
       "name": "Cheese Pizza",
       "ingrediants": "Mozarella cheese",
       "price": 199,
-      "img": "../../src/assets/cheesePizza.jpeg"
+      "img": "/assets/cheesePizza.jpeg"
     },
     {
       "id": 4,
       "name": "Double Cheese Pizza",
       "ingrediants": "Double mozarella cheese",
       "price": 249,
-      "img": "../../src/assets/cheesePizza.jpeg"
+      "img": "/assets/cheesePizza.jpeg"
     },
     {
       "id": 5,
       "name": "Custom Pizza",
       "ingrediants": "Click to add your ingrediants",
       "price": 0,
-      "img": "../../src/assets/customPizza.jpg",
+      "img": "/assets/customPizza.jpg",
       "custom": true
     }
   ]
