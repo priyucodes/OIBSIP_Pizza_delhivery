@@ -8,7 +8,7 @@ const ResetPassword = () => {
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
   const param = useParams();
-  const url = `http://localhost:3000/api/password-reset/${param.id}/${param.token}`;
+  const url = `https://pizza-delhivery-api.onrender.com/api/password-reset/${param.id}/${param.token}`;
   console.log(param.id);
   useEffect(() => {
     const verifyUrl = async () => {

@@ -40,7 +40,8 @@ function App() {
   useEffect(() => {
     let token = localStorage.getItem("token");
     if (token) {
-      const url = "http://localhost:3000/api/auth/jwt/verify";
+      const url =
+        "https://pizza-delhivery-api.onrender.com/api/auth/jwt/verify";
       axios
         .get(url, {
           params: {

@@ -55,7 +55,7 @@ const Login = () => {
       });
     }
     try {
-      const url = "http://localhost:3000/api/users";
+      const url = "https://pizza-delhivery-api.onrender.com/api/users";
       const { data: res } = await axios.post(url, signUpData);
 
       setMsg(res.message);
@@ -73,7 +73,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const url = "http://localhost:3000/api/auth";
+      const url = "https://pizza-delhivery-api.onrender.com/api/auth";
       const res = await axios.post(url, data);
       console.log(res);
       localStorage.setItem("token", res?.data?.data);

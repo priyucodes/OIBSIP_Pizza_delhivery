@@ -9,7 +9,7 @@ const EmailVerify = () => {
   useEffect(() => {
     return async () => {
       if (id && token) {
-        const url = `http://localhost:3000/api/users/${id}/verify/${token}`;
+        const url = `https://pizza-delhivery-api.onrender.com/api/users/${id}/verify/${token}`;
         const { data } = await axios.get(url);
         if (data?.success) {
           alert(data?.message);

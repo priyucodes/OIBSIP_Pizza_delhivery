@@ -10,7 +10,7 @@ const ResetPassword = () => {
   const submitHandler = async e => {
     e.preventDefault();
     try {
-      const url = `http://localhost:3000/api/password-reset`;
+      const url = `https://pizza-delhivery-api.onrender.com/api/password-reset`;
       const { data } = await axios.post(url, { email });
       setMsg(data.message);
       toast.success(data.message);
