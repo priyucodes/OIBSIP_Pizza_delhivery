@@ -35,8 +35,13 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   });
   useEffect(() => {
-    if (user) setIsLoggedIn(true);
+    if (user.email) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
   }, [user, isLoggedIn, setIsLoggedIn]);
+
   return (
     <header
       className={`px-6 transition-all duration-500 flex justify-between shadow-sm bg-primary/30 items-center font-roboto  h-20 w-full sticky ${
