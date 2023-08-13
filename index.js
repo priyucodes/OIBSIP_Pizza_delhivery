@@ -23,7 +23,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/password-reset", passwordResetRoutes);
 app.use("/api/pizzas", pizzasRoute);
-app.use("/api/mypizza", myoPizzaRoute);
+app.use("/api/myopizza", myoPizzaRoute);
 app.use("/api/payment", paymentRoute);
 
 const port = process.env.PORT || defaultPort;
